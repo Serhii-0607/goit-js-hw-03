@@ -12,8 +12,12 @@
 function makeArray(firstArray, secondArray, maxLength) {
   const newArray = [];
   const concatArray = firstArray.concat(secondArray);
-  for (let i = 0; i < maxLength; i++) {
-    newArray.push(concatArray[i]);
+  if (concatArray.length > maxLength) {
+    for (let i = 0; i < maxLength; i++) {
+      newArray.push(concatArray[i]);
+    }
+  } else {
+    return concatArray;
   }
   return newArray;
 }
